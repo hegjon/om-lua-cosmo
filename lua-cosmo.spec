@@ -1,10 +1,14 @@
 %global forgeurl https://github.com/mascarenhas/cosmo
 %global tag v%{version}
 
+%define lua_version %(lua -e 'print(_VERSION)' | cut -d ' ' -f 2)
+%define lua_pkgdir %{_libdir}/lua/%{lua_version}
+
 Name:      lua-cosmo
 Version:   16.06.04
 Release:   1
 Summary:   Safe templates for Lua
+Group:     Development/Other
 License:   MIT
 URL:       %{forgeurl}
 
